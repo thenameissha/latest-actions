@@ -1,0 +1,25 @@
+name: myFirstWorkflow
+on: workflow_dispatch
+  
+      
+jobs:
+  job1:
+    name: Job1
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1
+        run: echo "hi"  
+      - name: Step 2
+        uses: actions/checkout@v6.0.2
+      - name: Step 3
+        run : |
+          pwd
+          ls
+        
+
+
+      
+    
+
+
+    
