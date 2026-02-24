@@ -13,8 +13,14 @@ jobs:
         uses: actions/checkout@v6.0.2
       - name: Step 3
         run : |
-          pwd
+          echo 'pwd' >> myartifact.txt
           ls
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: myTextFile
+          path: ./myartifact.txt
+      
         
 
 
