@@ -1,4 +1,4 @@
-name: myFirstWorkflow
+name: myActionsTest
 on: workflow_dispatch
   
       
