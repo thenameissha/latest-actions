@@ -34,7 +34,18 @@ jobs:
             artifacts/
             !**/hostname.txt
             
-        
+  job2:
+    name: Job2
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step 1 Checking current directory
+        run: |
+          pwd
+          ls
+      - name: download single artifact
+        uses: actions/download-artifact@v7.0.0
+        with:
+          name: single_Artifact
 
 
       
