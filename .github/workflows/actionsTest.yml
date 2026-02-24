@@ -47,7 +47,7 @@ jobs:
         uses: actions/download-artifact@v7.0.0
         with:
           name: mutipleFiles
-      - name: download single artifact
+      - name:check the artifacts
         run: |
           pwd
           ls -ltr
