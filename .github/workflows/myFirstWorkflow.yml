@@ -9,3 +9,16 @@ jobs:
         run: echo "hi"  
       - name: check OS release
         run: cat /etc/os-release
+  job2:
+    name: Job2
+    runs-on: ubuntu-latest
+    steps: 
+    - run: hostname
+      name: Checking host name
+    - run: |
+        echo "hi from Sha"
+      name: printing my hi
+    
+
+
+    
