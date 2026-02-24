@@ -44,6 +44,9 @@ jobs:
     needs: job1
     runs-on: ubuntu-latest
     steps:
+      - name: creating a custom folder for artifacts
+        run: |
+          mkdir -p single_file
       - name: Step 1 Checking current directory
         run: |
           pwd
@@ -52,10 +55,11 @@ jobs:
         uses: actions/download-artifact@v7.0.0
         with:
           name: myArtifactDirectory
+          path: single_file
       - name: check the artifacts
         run: |
           pwd
-          ls -ltr
+          ls -ltr single_file
 
 
       
