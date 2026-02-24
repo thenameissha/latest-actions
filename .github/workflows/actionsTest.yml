@@ -24,7 +24,12 @@ jobs:
           name: myTextFile
           path: ./myartifact.txt
 
-          
+      - name: the download directory
+        uses: actions/upload-artifact@v4
+        with:
+          name: myArtifactDirectory
+          path: artifacts/
+        
       - name: upload multiple artifacts
         uses: actions/upload-artifact@v4
         with: 
@@ -46,8 +51,8 @@ jobs:
       - name: download single artifact
         uses: actions/download-artifact@v7.0.0
         with:
-          name: mutipleFiles
-      - name:check the artifacts
+          name: myArtifactDirectory
+      - name: check the artifacts
         run: |
           pwd
           ls -ltr
