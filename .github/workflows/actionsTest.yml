@@ -14,13 +14,23 @@ jobs:
       - name: Step 3
         run : |
           echo 'pwd' >> myartifact.txt
+          echo 'ls-lrt' >> artifacts/multi.txt
+          echo 'hostname' >> artifacts/hostname.txt
           ls
       - name: upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: myTextFile
           path: ./myartifact.txt
-      
+      - name: upload multiple artifacts
+        uses: actions/upload-artifact@v4
+        with: 
+          name: mutipleFiles
+          path: |
+            ./myartifact.txt
+            artifacts/
+            !**/hostname.txt
+            
         
 
 
