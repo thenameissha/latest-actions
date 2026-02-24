@@ -45,7 +45,7 @@ jobs:
       - name: download single artifact
         uses: actions/download-artifact@v7.0.0
         with:
-          name: single_Artifact
+          name: myTextFile
 
 
       
