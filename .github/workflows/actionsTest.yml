@@ -5,7 +5,7 @@ on:
       - dev
   pull_request:
     branches:
-      - main
+      - dev
 jobs:
   job1:
     name: Job1
