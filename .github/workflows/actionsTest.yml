@@ -73,7 +73,9 @@ jobs:
       - name: reffering env variables
         run: |
           echo "[INFO] Running deployment for $ENV_TYPE with $APP_USER"
-       
+      - name: ref Repo Secrets
+        run: |
+          echo "app password is ${{ secrets.APP_PASSWORD }}"
 
 
       
