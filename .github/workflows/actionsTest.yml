@@ -76,7 +76,30 @@ jobs:
       - name: ref Repo Secrets
         run: |
           echo "app password is ${{ secrets.APP_PASSWORD }}"
+  staging: 
+   name: STAGE-DEPLOYMENT
+   runs-on: ubuntu-latest
+   steps:
+     - name: reffering environment variables
+       run: echo " running the ${{vars.HOST}}
+       #secrets will not be printed in logs
+     - name: reffering environment secrets
+       run: echo " running the ${{vars.PASSWORD}}         
+   environment:
+    name: STAGING 
 
+  production: 
+   name: STAGE-DEPLOYMENT
+   runs-on: ubuntu-latest
+   steps:
+     - name: reffering environment variables
+       run: echo " running the ${{vars.HOST}}
+       #secrets will not be printed in logs
+     - name: reffering environment secrets
+       run: echo " running the ${{vars.PASSWORD}}         
+   environment:
+    name: PRODUCTION
+    
 
       
     
