@@ -89,7 +89,7 @@ jobs:
     name: STAGING 
 
   production: 
-   name: STAGE-DEPLOYMENT
+   name: PROD-DEPLOYMENT
    runs-on: ubuntu-latest
    steps:
      - name: reffering environment variables
