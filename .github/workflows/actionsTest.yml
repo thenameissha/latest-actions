@@ -87,6 +87,8 @@ jobs:
        run: echo " running the ${{vars.PASSWORD}}         
    environment:
     name: STAGING 
+   if: github.ref == 'ref/heads/dev'
+   #runs only if branch is dev
 
   production: 
    name: PROD-DEPLOYMENT
@@ -99,6 +101,8 @@ jobs:
        run: echo " running the ${{vars.PASSWORD}}         
    environment:
     name: PRODUCTION
+   if: github.ref == 'ref/heads/main'
+   #runs only if branch is dev
     
 
       
