@@ -2,10 +2,10 @@ name: myActionsTest
 on:
   push:
     branches:
-      - dev
+      - none
   pull_request:
     branches:
-      - dev
+      - none
 
 env:
   ENV_TYPE: DEV
