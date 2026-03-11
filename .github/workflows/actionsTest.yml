@@ -2,8 +2,16 @@ name: myActionsTest
 on:
   push:
     branches:
-      -dev  
-      
+      - dev
+  pull_request:
+    branches:
+      - dev
+
+env:
+  ENV_TYPE: DEV
+  APP_USER: shasha
+  
+
 jobs:
   job1:
     name: Job1
@@ -52,7 +60,7 @@ jobs:
       - name: Step 1 Checking current directory
         run: |
           pwd
-          ls
+          ls -ltr
       - name: download single artifact
         uses: actions/download-artifact@v7.0.0
         with:
@@ -62,7 +70,40 @@ jobs:
         run: |
           pwd
           ls -ltr single_file
+      - name: reffering env variables
+        run: |
+          echo "[INFO] Running deployment for $ENV_TYPE with $APP_USER"
+      - name: ref Repo Secrets
+        run: |
+          echo "app password is ${{ secrets.APP_PASSWORD }}"
+  staging: 
+   name: STAGE-DEPLOYMENT
+   runs-on: ubuntu-latest
+   steps:
+     - name: reffering environment variables
+       run: echo " running the ${{vars.HOST}}
+       #secrets will not be printed in logs
+     - name: reffering environment secrets
+       run: echo " running the ${{vars.PASSWORD}}         
+   environment:
+    name: STAGING 
+   if: github.head_ref == 'dev'
+   #runs only if branch is dev
 
+  production: 
+   name: PROD-DEPLOYMENT
+   runs-on: ubuntu-latest
+   steps:
+     - name: reffering environment variables
+       run: echo " running the ${{vars.HOST}}
+       #secrets will not be printed in logs
+     - name: reffering environment secrets
+       run: echo " running the ${{vars.PASSWORD}}         
+   environment:
+    name: PRODUCTION
+   if: github.head_ref == 'ref/heads/main'
+   #runs only if branch is dev
+    
 
       
     
